@@ -1,0 +1,46 @@
+{
+  "name": "airtable.cms",
+  "version": "0.0.0",
+  "description": "tools and utilities to make airtable work as a CMS",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "build:docs": "typedoc-json-parser"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devramsean0/airtable-cms.git"
+  },
+  "author": "Sean Outram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devramsean0/airtable-cms/issues"
+  },
+  "homepage": "https://github.com/devramsean0/airtable-cms#readme",
+  "devDependencies": {
+    "@sapphire/ts-config": "^5.0.1",
+    "@types/html-escaper": "^3.0.2",
+    "@types/node": "^22.10.1"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "/astro": {
+      "types": "./dist/astro.d.ts",
+      "import": "./dist/astro.js",
+      "require": "./dist/astro.js"
+    }
+  },
+  "optionalDependencies": {
+    "astro": "^5.0.4"
+  },
+  "dependencies": {
+    "@sapphire/fetch": "^3.0.5",
+    "typedoc": "^0.27.4",
+    "typedoc-json-parser": "^10.2.0"
+  }
+}

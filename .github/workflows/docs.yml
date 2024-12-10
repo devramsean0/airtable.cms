@@ -73,19 +73,19 @@ jobs:
           SEMVER: ${{ env.NAME }}
         run: |
           mkdir -p out/airtable.cms
-          mv json-docs/api.json out/json-docs/airtable.cms/${SEMVER}.json
+          mv docs/api.json out/json-docs/airtable.cms/${SEMVER}.json
       - name: Move Documentation
         if: ${{ env.TYPE == 'branch' }}
         run: |
           mkdir -p out/airtable.cms
-          cp json-docs/api.json out/json-docs/airtable.cms/current-branch-${NAME}.json
-          mv json-docs/api.json out/json-docs/airtable.cms/branch-${NAME}-${SHA}.json
+          cp docs/api.json out/json-docs/airtable.cms/current-branch-${NAME}.json
+          mv docs/api.json out/json-docs/airtable.cms/branch-${NAME}-${SHA}.json
       - name: Move Documentation
         if: ${{ env.TYPE == 'pull_request'}}
         run: |
           mkdir -p out/airtable.cms
-          cp json-docs/api.json out/json-docs/airtable.cms/current-pull-${NAME}.json
-          mv json-docs/api.json out/json-docs/airtable.cms/pull-${NAME}-${SHA}.json
+          cp docs/api.json out/json-docs/airtable.cms/current-pull-${NAME}.json
+          mv docs/api.json out/json-docs/airtable.cms/pull-${NAME}-${SHA}.json
       - name: Commit & Push
         uses: nick-fields/retry@v3
         with:

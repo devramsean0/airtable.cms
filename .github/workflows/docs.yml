@@ -23,11 +23,11 @@ jobs:
     steps:
       - name: Checkout Project
         uses: actions/checkout@v4
-      - name: Use Node.js v18
+      - name: Use Node.js v22
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: yarn
+          node-version: 22
+          cache: npm
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: yarn --immutable

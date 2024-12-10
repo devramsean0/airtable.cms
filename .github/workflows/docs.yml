@@ -32,12 +32,12 @@ jobs:
       - name: Install Dependencies
         run: npm i --immutable
       - name: Build Documentation
-        run: npm run build:json-docs
+        run: npm run build:docs
       - name: Upload Documentation Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: json-docs
-          path: json-docs/api.json
+          name: docs
+          path: docs/api.json
       - name: Set Output
         id: env
         run: |
@@ -58,12 +58,12 @@ jobs:
       - name: Download Documentation Artifacts
         uses: actions/download-artifact@v4
         with:
-          name: json-docs
-          path: json-docs
+          name: docs
+          path: docs
       - name: Checkout Documentation Project
         uses: actions/checkout@v4
         with:
-          repository: 'devramsean0/json-docs'
+          repository: 'devramsean0/docs'
           token: ${{ secrets.TOKEN }}
           path: 'out'
 
